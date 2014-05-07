@@ -1,5 +1,3 @@
-// TODO gruntfile
-// TODO subgenerator Object - *.js, *.spec.js
 // TODO optional Less
 // TODO optional sample page with local server
 
@@ -50,13 +48,22 @@ JsLibGenerator.prototype.basicStructure = function basicStructure() {
 
   // source code
   this.mkdir('src');
-  this.template('object.coffee', 'src/' + this.slug + '.coffee');
+  // this.template('object.coffee', 'src/' + this.slug + '.coffee');
 
   // tests
   this.mkdir('test');
   this.mkdir('test/src');
-  this.template('object.spec.coffee', 'test/src/' + this.slug + '.spec.coffee');
+  // this.template('object.spec.coffee', 'test/src/' + this.slug + '.spec.coffee');
 };
+
+JsLibGenerator.prototype.baseObject = function () {
+  this.invoke("jslib:obj", {
+    options: {
+      nested: true,
+      obj_name: this.project_name
+    }
+  });
+}
 
 JsLibGenerator.prototype.install = function () {
   var done = this.async();
