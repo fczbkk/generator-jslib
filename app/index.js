@@ -25,6 +25,12 @@ JsLibGenerator.prototype.askFor = function askFor() {
       name: 'project_description',
       message: 'Describe your JS library.',
       default: 'JS library that does something.'
+    },
+    {
+      name: 'include_less',
+      message: 'Will you use LESS?',
+      type: 'confirm',
+      default: false
     }
   ];
 
@@ -33,6 +39,7 @@ JsLibGenerator.prototype.askFor = function askFor() {
     this.slug = this._.slugify(answers.project_name);
     this.project_name = answers.project_name;
     this.project_description = answers.project_description;
+    this.include_less = answers.include_less;
     done();
   }.bind(this));
 
@@ -41,28 +48,43 @@ JsLibGenerator.prototype.askFor = function askFor() {
 JsLibGenerator.prototype.basicStructure = function basicStructure() {
   // general project files
   this.template('_package.json', 'package.json');
-  this.copy('_Gruntfile.coffee', 'Gruntfile.coffee');
+  this.template('_Gruntfile.coffee', 'Gruntfile.coffee');
   this.template('_gitignore', '.gitignore');
   this.template('_README.md', 'README.md');
   this.template('_UNLICENSE', 'UNLICENSE');
 
   // source code
   this.mkdir('src');
-  // this.template('object.coffee', 'src/' + this.slug + '.coffee');
+  this.mkdir('src/coffee');
+  if (this.include_less) {
+    this.mkdir('src/less');
+  }
 
   // tests
   this.mkdir('test');
   this.mkdir('test/src');
-  // this.template('object.spec.coffee', 'test/src/' + this.slug + '.spec.coffee');
 };
 
 JsLibGenerator.prototype.baseObject = function () {
+
+  // CoffeeScript
   this.invoke("jslib:obj", {
     options: {
       nested: true,
       obj_name: this.project_name
     }
   });
+
+  // Less
+  if (this.include_less) {
+    this.invoke("jslib:less", {
+      options: {
+        nested: true,
+        obj_name: this.project_name
+      }
+    });
+  }
+
 }
 
 JsLibGenerator.prototype.install = function () {

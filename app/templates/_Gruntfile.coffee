@@ -7,7 +7,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON 'package.json'
 
     coffeelint:
-      src: 'src/*.coffee'
+      src: 'src/coffee/*.coffee'
       test: 'test/src/*.coffee'
 
     jasmine:
@@ -15,38 +15,76 @@ module.exports = (grunt) ->
         src: ['build/*.js', '!build/*.min.js']
         options:
           keepRunner: false
-          specs: 'test/spec/<%= pkg.name %>.spec.js'
+          specs: 'test/spec/<%%= pkg.name %>.spec.js'
 
     coffee:
       src:
         files:
-          'build/<%= pkg.name %>.js' : 'src/*.coffee'
+          'build/<%%= pkg.name %>.js' : 'src/coffee/*.coffee'
       test:
         files:
-          'test/spec/<%= pkg.name %>.spec.js' : 'test/src/*.coffee'
+          'test/spec/<%%= pkg.name %>.spec.js' : 'test/src/*.coffee'
 
     uglify:
       default:
         options:
           banner:
             """
-              // <%= pkg.title %>, v<%= pkg.version %>
-              // by <%= pkg.author %>
-              // <%= pkg.homepage %>
+              // <%%= pkg.title %>, v<%%= pkg.version %>
+              // by <%%= pkg.author %>
+              // <%%= pkg.homepage %>
 
             """
         files:
-          'build/<%= pkg.name %>.min.js' : 'build/<%= pkg.name %>.js'
+          'build/<%%= pkg.name %>.min.js' : 'build/<%%= pkg.name %>.js'
 
     watch:
       options:
         atBegin: true
       src:
-        files: ['src/*.coffee']
+        files: ['src/coffee/*.coffee']
         tasks: ['coffeelint:src', 'coffee:src', 'jasmine']
       test:
         files: ['test/src/*.coffee']
         tasks: ['coffeelint:test', 'coffee:test', 'jasmine']
+      <% if (include_less) { %>
+      less:
+        files: ['src/less/*.less']
+        tasks: ['less']
+      <% } %>
 
-  grunt.registerTask 'build', ['coffeelint', 'coffee', 'jasmine', 'uglify']
-  grunt.registerTask 'default', ['watch']
+<% if (include_less) { %>
+    less:
+      default:
+        files:
+          'build/<%%= pkg.name %>.css' : 'src/less/*.less'
+
+    cssmin:
+      default:
+        options:
+          banner:
+            """
+              // <%%= pkg.title %>, v<%%= pkg.version %>
+              // by <%%= pkg.author %>
+              // <%%= pkg.homepage %>
+
+            """
+        files:
+          'build/<%%= pkg.name %>.min.css' : 'build/<%%= pkg.name %>.css'
+<% } %>
+
+
+  grunt.registerTask 'build', [
+    'coffeelint'
+    'coffee'
+    'jasmine'
+    'uglify'
+<% if (include_less) { %>
+    'less'
+    'cssmin'
+<% } %>
+  ]
+
+  grunt.registerTask 'default', [
+    'watch'
+  ]

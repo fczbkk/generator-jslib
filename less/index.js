@@ -3,14 +3,14 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 
-var ObjGenerator = module.exports = function (args, options) {
+var LessGenerator = module.exports = function (args, options) {
   yeoman.generators.Base.apply(this, arguments);
   this.options = options;
 };
 
-util.inherits(ObjGenerator, yeoman.generators.Base);
+util.inherits(LessGenerator, yeoman.generators.Base);
 
-ObjGenerator.prototype.askFor = function askFor() {
+LessGenerator.prototype.askFor = function askFor() {
 
   if (!this.options.nested) {
 
@@ -19,15 +19,15 @@ ObjGenerator.prototype.askFor = function askFor() {
     var prompts = [
       {
         name: 'obj_name',
-        message: 'What do you want to call this object?',
-        default: 'My Object'
+        message: 'What do you want to call this less file?',
+        default: 'My Less'
       }
     ];
 
     var done = this.async();
     this.prompt(prompts, function (answers) {
       this.slug = this._.slugify(answers.obj_name);
-      this.obj_name = this._.classify(answers.obj_name);
+      this.obj_name = answers.obj_name;
       done();
     }.bind(this));
 
@@ -36,13 +36,12 @@ ObjGenerator.prototype.askFor = function askFor() {
     // sub generator was called internally from main generator
 
     this.slug = this._.slugify(this.options.obj_name);
-    this.obj_name = this._.classify(this.options.obj_name);
+    this.obj_name = this.options.obj_name;
 
   }
 
 };
 
-ObjGenerator.prototype.basicStructure = function basicStructure() {
-  this.template('object.coffee', 'src/coffee/' + this.slug + '.coffee');
-  this.template('object.spec.coffee', 'test/src/' + this.slug + '.spec.coffee');
+LessGenerator.prototype.basicStructure = function basicStructure() {
+  this.template('style.less', 'src/less/' + this.slug + '.less');
 };
