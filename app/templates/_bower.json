@@ -1,0 +1,21 @@
+{
+  "name": "<%= slug %>",
+  "version": "0.1.0",
+  "homepage": "https://github.com/fczbkk/<%= slug %>",
+  "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
+  "description": "<%= project_description %>",
+  "main": "build/<%= slug %>.js",
+  "license": "ULICENSE",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "src",
+    "doc",
+    "Gruntfile.coffee",
+    ".DS_Store",
+    "bower.json",
+    "package.json"
+  ]
+}

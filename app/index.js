@@ -33,6 +33,12 @@ JsLibGenerator.prototype.askFor = function askFor() {
       message: 'Will you use LESS?',
       type: 'confirm',
       default: false
+    },
+    {
+      name: 'include_bower',
+      message: 'Would you like to support Bower?',
+      type: 'confirm',
+      default: false
     }
   ];
 
@@ -42,6 +48,7 @@ JsLibGenerator.prototype.askFor = function askFor() {
     this.project_name = answers.project_name;
     this.project_description = answers.project_description;
     this.include_less = answers.include_less;
+    this.include_bower = answers.include_bower;
     done();
   }.bind(this));
 
@@ -55,6 +62,10 @@ JsLibGenerator.prototype.basicStructure = function basicStructure() {
   this.template('_README.md', 'README.md');
   this.template('_UNLICENSE', 'UNLICENSE');
 
+  // Bower
+  if (this.include_bower) {
+    this.template('_bower.json', 'bower.json');
+  }
   // source code
   this.mkdir('src');
   this.mkdir('src/coffee');
