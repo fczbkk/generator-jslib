@@ -69,22 +69,21 @@ JsLibGenerator.prototype.basicStructure = function basicStructure() {
 
 JsLibGenerator.prototype.baseObject = function () {
 
+  function doInvoke(generator, submodule_name) {
+    generator.invoke("jslib:" + submodule_name, {
+      options: {
+        nested: true,
+        obj_name: generator.project_name
+      }
+    });
+  }
+
   // CoffeeScript
-  this.invoke("jslib:obj", {
-    options: {
-      nested: true,
-      obj_name: this.project_name
-    }
-  });
+  doInvoke(this, 'obj');
 
   // Less
   if (this.include_less) {
-    this.invoke("jslib:less", {
-      options: {
-        nested: true,
-        obj_name: this.project_name
-      }
-    });
+    doInvoke(this, 'less');
   }
 
 }
