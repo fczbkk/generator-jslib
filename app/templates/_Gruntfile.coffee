@@ -6,6 +6,16 @@ module.exports = (grunt) ->
 
     pkg: grunt.file.readJSON 'package.json'
 
+    banner:
+      """
+        /*
+        <%%= pkg.title %>, v<%%= pkg.version %>
+        by <%%= pkg.author %>
+        <%%= pkg.homepage %>
+        */
+
+      """
+
     coffeelint:
       src: 'src/coffee/*.coffee'
       test: 'test/src/*.coffee'
@@ -28,13 +38,7 @@ module.exports = (grunt) ->
     uglify:
       default:
         options:
-          banner:
-            """
-              // <%%= pkg.title %>, v<%%= pkg.version %>
-              // by <%%= pkg.author %>
-              // <%%= pkg.homepage %>
-
-            """
+          banner: "<%%= banner %>"
         files:
           'build/<%%= pkg.name %>.min.js' : 'build/<%%= pkg.name %>.js'
 
@@ -62,13 +66,7 @@ module.exports = (grunt) ->
     cssmin:
       default:
         options:
-          banner:
-            """
-              // <%%= pkg.title %>, v<%%= pkg.version %>
-              // by <%%= pkg.author %>
-              // <%%= pkg.homepage %>
-
-            """
+          banner: "<%%= banner %>"
         files:
           'build/<%%= pkg.name %>.min.css' : 'build/<%%= pkg.name %>.css'
 <% } %>

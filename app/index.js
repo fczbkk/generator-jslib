@@ -1,4 +1,3 @@
-// TODO optional Less
 // TODO optional sample page with local server
 
 'use strict';
