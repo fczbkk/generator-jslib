@@ -14,16 +14,19 @@ util.inherits(JsLibGenerator, yeoman.generators.Base);
 
 JsLibGenerator.prototype.askFor = function askFor() {
 
+  var directory_name = __dirname.split('/').slice(-1)[0];
+  var default_project_name = this._.humanize(directory_name);
+
   var prompts = [
     {
       name: 'project_name',
       message: 'What do you want to call this JS library?',
-      default: 'My JS Library'
+      default: default_project_name
     },
     {
       name: 'project_description',
       message: 'Describe your JS library.',
-      default: 'JS library that does something.'
+      default: default_project_name
     },
     {
       name: 'include_less',
