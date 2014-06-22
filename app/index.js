@@ -2,6 +2,32 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var GithubApi = require('github');
+
+
+var github = new GithubApi({
+  version: '3.0.0'
+});
+
+var github_token = process.env.GITHUB_TOKEN
+if (github_token) {
+  github.authenticate({
+    type: 'oauth',
+    token: github_token
+  });
+}
+
+function getGithubUserInfo (username, callback) {
+  github.user.getFrom({
+    user: username
+  }, function (error, response) {
+    if (error) {
+      throw new Error('Could not get info from GitHub profile of ' + username);
+    }
+    callback(response);
+  });
+}
+
 
 var JsLibGenerator = module.exports = function (args, options) {
   yeoman.generators.Base.apply(this, arguments);
@@ -37,6 +63,11 @@ JsLibGenerator.prototype.askFor = function askFor() {
       message: 'Would you like to support Bower?',
       type: 'confirm',
       default: false
+    },
+    {
+      name: 'github_username',
+      message: 'What is your username at GitHub?',
+      default: 'fczbkk'
     }
   ];
 
@@ -47,7 +78,18 @@ JsLibGenerator.prototype.askFor = function askFor() {
     this.project_description = answers.project_description;
     this.include_less = answers.include_less;
     this.include_bower = answers.include_bower;
-    done();
+    this.github_username = answers.github_username;
+
+    // try to get user info from GitHub
+    getGithubUserInfo(this.github_username, function (response) {
+      this.github_home = response.html_url;
+      this.github_name = response.name;
+      this.github_email = response.email;
+      this.author_info = this.github_name + ' <' + this.github_email + '> (' + this.github_home + ')';
+      this.project_url = this.github_home + '/' + this.slug;
+      done();
+    }.bind(this));
+
   }.bind(this));
 
 };

@@ -5,14 +5,14 @@
   "description": "<%= project_description %>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fczbkk/<%= slug %>.git"
+    "url": "<%= project_url %>.git"
   },
-  "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
+  "author": "<%= author_info %>",
   "license": "UNLICENSE",
   "bugs": {
-    "url": "https://github.com/fczbkk/<%= slug %>/issues"
+    "url": "<%= project_url %>/issues"
   },
-  "homepage": "https://github.com/fczbkk/<%= slug %>",
+  "homepage": "<%= project_url %>",
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-coffeelint": "^0.0.10",
