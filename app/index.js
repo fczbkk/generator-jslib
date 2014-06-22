@@ -1,5 +1,3 @@
-// TODO optional sample page with local server
-
 'use strict';
 var util = require('util');
 var path = require('path');
@@ -14,7 +12,7 @@ util.inherits(JsLibGenerator, yeoman.generators.Base);
 
 JsLibGenerator.prototype.askFor = function askFor() {
 
-  var directory_name = __dirname.split('/').slice(-1)[0];
+  var directory_name = path.basename(process.cwd());
   var default_project_name = this._.humanize(directory_name);
 
   var prompts = [
