@@ -20,6 +20,7 @@
     "grunt-contrib-watch": "*",
     "grunt-contrib-jasmine": "*",
     "grunt-contrib-coffee": "*",
+    "grunt-bump": "*",
     <% if (include_less) { %>
     "grunt-contrib-less": "*",
     "grunt-contrib-cssmin": "*",

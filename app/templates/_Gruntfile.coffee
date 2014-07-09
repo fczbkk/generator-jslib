@@ -71,6 +71,17 @@ module.exports = (grunt) ->
           'build/<%%= pkg.name %>.min.css' : 'build/<%%= pkg.name %>.css'
 <% } %>
 
+    bump:
+      options:
+        files: [
+          'package.json'
+          <% if (include_bower) { %>
+          'bower.json'
+          <% } %>
+        ]
+        updateConfigs: ['pkg']
+        commitFiles: ['-a']
+
 
   grunt.registerTask 'build', [
     'coffeelint'
