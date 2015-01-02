@@ -21,6 +21,7 @@
     "grunt-contrib-jasmine": "*",
     "grunt-contrib-coffee": "*",
     "grunt-bump": "*",
+    "grunt-conventional-changelog": "*",
     <% if (include_less) { %>
     "grunt-contrib-less": "*",
     "grunt-contrib-cssmin": "*",

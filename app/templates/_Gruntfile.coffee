@@ -81,9 +81,14 @@ module.exports = (grunt) ->
         ]
         updateConfigs: ['pkg']
         commitFiles: ['-a']
+        pushTo: 'origin'
 
 
-  grunt.registerTask 'build', [
+  changelog:
+    options: {}
+
+
+  grunt.registerTask 'dev', [
     'coffeelint'
     'coffee'
     'jasmine'
@@ -93,6 +98,17 @@ module.exports = (grunt) ->
     'cssmin'
 <% } %>
   ]
+
+  # Constructs the code, runs tests and if everyting is OK, creates a minified
+  # version ready for production. This task is intended to be run manually.
+  grunt.registerTask 'build', 'Bumps version and builds JS.', (version_type) ->
+    version_type = 'patch' unless version_type in ['patch', 'minor', 'major']
+    grunt.task.run [
+      "bump-only:#{version_type}"
+      'dev'
+      'changelog'
+      'bump-commit'
+    ]
 
   grunt.registerTask 'default', [
     'watch'
