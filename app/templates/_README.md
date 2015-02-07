@@ -6,6 +6,8 @@
 
 If you found any bugs, if you have feature requests or any questions, please, either [file an issue at GitHub](<%= project_url %>/issues) or send me an e-mail at [riki@fczbkk.com](mailto:<%= github_email %>).
 
+<% if (license !== 'none') { %>
 ## License
 
-<%= project_name %> is published under the [UNLICENSE license](<%= project_url %>/blob/master/UNLICENSE). Feel free to use it in any way.
+<%= project_name %> is published under the [<%= license %> license](<%= project_url %>/blob/master/<%= license_filename %>).
+<% } %>

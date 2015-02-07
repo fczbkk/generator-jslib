@@ -8,7 +8,9 @@
     "url": "<%= project_url %>.git"
   },
   "author": "<%= author_info %>",
-  "license": "UNLICENSE",
+<% if (license !== 'none') { %>
+  "license": "<%= license %>",
+<% } %>
   "bugs": {
     "url": "<%= project_url %>/issues"
   },

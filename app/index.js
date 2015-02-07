@@ -65,6 +65,13 @@ JsLibGenerator.prototype.askFor = function askFor() {
       default: false
     },
     {
+      name: 'license',
+      message: 'What license wouldyou like to use?',
+      type: 'list',
+      choices: ['MIT', 'UNLICENSE', 'BSD', 'none'],
+      default: 'MIT'
+    },
+    {
       name: 'github_username',
       message: 'What is your username at GitHub?',
       default: 'fczbkk'
@@ -79,6 +86,13 @@ JsLibGenerator.prototype.askFor = function askFor() {
     this.include_less = answers.include_less;
     this.include_bower = answers.include_bower;
     this.github_username = answers.github_username;
+    this.year = (new Date).getFullYear();
+
+    this.license = answers.license;
+    this.license_filename = 'LICENSE';
+    if (this.license === 'UNLICENSE') {
+      this.license_filename = 'UNLICENSE';
+    }
 
     // try to get user info from GitHub
     getGithubUserInfo(this.github_username, function (response) {
@@ -100,7 +114,21 @@ JsLibGenerator.prototype.basicStructure = function basicStructure() {
   this.template('_Gruntfile.coffee', 'Gruntfile.coffee');
   this.template('_gitignore', '.gitignore');
   this.template('_README.md', 'README.md');
-  this.template('_UNLICENSE', 'UNLICENSE');
+
+  switch (this.license) {
+    case 'UNLICENSE':
+      this.template('_UNLICENSE', 'UNLICENSE');
+      break;
+    case 'MIT':
+      this.template('_LICENSE_MIT', 'LICENSE');
+      break;
+    case 'BSD':
+      this.template('_LICENSE_BSD', 'LICENSE');
+      break;
+    default:
+      break;
+  }
+
 
   // Bower
   if (this.include_bower) {
