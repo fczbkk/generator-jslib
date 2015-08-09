@@ -1,0 +1,22 @@
+{
+  "title": "<%= project.name %>",
+  "name": "<%= project.slug %>",
+  "description": "<%= project.description %>",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "<%= github.repo_url %>"
+  },
+  "author": {
+    "name": "<%= author.name %>",
+    "email": "<%= author.email %>",
+    "url": "<%= author.url %>"
+  },
+  <% if (license.type !== 'none') { %>
+  "license": "<%= license.filename %>",
+  <% } %>
+  "bugs": {
+    "url": "<%= github.project_url %>/issues"
+  },
+  "homepage": "<%= github.project_url %>"
+}

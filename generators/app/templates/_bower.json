@@ -1,0 +1,28 @@
+{
+  "name": "<%= project.slug %>",
+  "version": "0.0.0",
+  "homepage": "<%= github.project_url %>",
+  "author": {
+    "name": "<%= author.name %>",
+    "email": "<%= author.email %>",
+    "url": "<%= author.url %>"
+  },
+  "description": "<%= project.description %>",
+  "main": "lib/<%= project.slug %>.js",
+  <% if (license.type !== 'none') { %>
+  "license": "<%= license.filename %>",
+  <% } %>
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "src",
+    "doc",
+    "Gruntfile.coffee",
+    ".DS_Store",
+    "bower.json",
+    "package.json",
+    "assets"
+  ]
+}
