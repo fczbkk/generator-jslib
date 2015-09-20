@@ -121,6 +121,7 @@ module.exports = yeoman.generators.Base.extend
 
   writing: ->
     templates =
+      '_gitignore': '.gitignore'
       '_package.json': 'package.json'
       'Gruntfile.coffee': 'Gruntfile.coffee'
       'CHANGELOG.md': 'CHANGELOG.md'
