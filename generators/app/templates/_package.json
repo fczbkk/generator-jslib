@@ -13,7 +13,7 @@
     "url": "<%= author.url %>"
   },
   <% if (license.type !== 'none') { %>
-  "license": "<%= license.filename %>",
+  "license": "<%= license.type %>",
   <% } %>
   "bugs": {
     "url": "<%= github.project_url %>/issues"
