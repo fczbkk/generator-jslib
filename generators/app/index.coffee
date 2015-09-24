@@ -148,6 +148,7 @@ module.exports = yeoman.generators.Base.extend
       'grunt'
       'grunt-banner'
       'grunt-bump'
+      'coffeelint'
       'grunt-coffeelint'
       'grunt-contrib-clean'
       'grunt-contrib-coffee'
