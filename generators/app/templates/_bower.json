@@ -1,6 +1,5 @@
 {
   "name": "<%= project.slug %>",
-  "version": "0.0.0",
   "homepage": "<%= github.project_url %>",
   "author": {
     "name": "<%= author.name %>",
@@ -8,6 +7,7 @@
     "url": "<%= author.url %>"
   },
   "description": "<%= project.description %>",
+  "moduleType": ["globals"],
   "main": "lib/<%= project.slug %>.js",
   <% if (license.type !== 'none') { %>
   "license": "<%= license.filename %>",
