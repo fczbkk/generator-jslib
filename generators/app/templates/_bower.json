@@ -10,7 +10,7 @@
   "moduleType": ["globals"],
   "main": "lib/<%= project.slug %>.js",
   <% if (license.type !== 'none') { %>
-  "license": "<%= license.filename %>",
+  "license": "<%= license.type %>",
   <% } %>
   "ignore": [
     "**/.*",
