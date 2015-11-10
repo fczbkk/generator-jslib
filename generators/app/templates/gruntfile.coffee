@@ -24,12 +24,24 @@ module.exports = (grunt) ->
         src: './lib/*.js'
 
 
-    jasmine:
+    karma:
       default:
-        src: ['./temp/lib/*.js']
+        background: true
+        singleRun: false
         options:
-          keepRunner: false
-          specs: './temp/test/*.spec.js'
+          basePath: '.'
+          reporters: ['mocha']
+          mochaReporter:
+            output: 'minimal'
+          frameworks: ['jasmine']
+          browsers: [
+            'Chrome'
+            'PhantomJS'
+          ]
+          files: [
+            './temp/lib/<%%= pkg.name %>.js'
+            './temp/test/*.spec.js'
+          ]
 
 
     coffee:
@@ -179,17 +191,17 @@ module.exports = (grunt) ->
   grunt.registerTask 'dev', [
     'coffeelint'
     'coffee'
-    'jasmine'
+    'test'
   ]
 
 
   grunt.registerTask 'test', [
-    'jasmine'
+    'karma:default:run'
   ]
 
 
   grunt.registerTask 'default', [
     'clean'
-    'dev'
+    'karma:default:start'
     'watch'
   ]

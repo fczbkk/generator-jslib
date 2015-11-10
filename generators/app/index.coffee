@@ -145,10 +145,9 @@ module.exports = yeoman.generators.Base.extend
   install: ->
 
     modules_list = [
-      'grunt'
+      'coffeelint'
       'grunt-banner'
       'grunt-bump'
-      'coffeelint'
       'grunt-coffeelint'
       'grunt-contrib-clean'
       'grunt-contrib-coffee'
@@ -157,9 +156,18 @@ module.exports = yeoman.generators.Base.extend
       'grunt-contrib-watch'
       'grunt-conventional-changelog'
       'grunt-files-check'
+      'grunt-karma'
       'grunt-prompt'
       'grunt-shell'
+      'grunt'
+      'jasmine-core'
+      'karma-chrome-launcher'
+      'karma-jasmine'
+      'karma-mocha-reporter'
+      'karma-phantomjs-launcher'
+      'karma'
       'load-grunt-tasks'
+      'phantomjs'
       'semver'
     ]
 
