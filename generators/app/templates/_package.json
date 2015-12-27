@@ -1,22 +1,26 @@
 {
-  "title": "<%= project.name %>",
-  "name": "<%= project.slug %>",
-  "description": "<%= project.description %>",
-  "version": "0.0.0",
+  "name": "<%= slug %>",
+  "version": "0.0.1",
+  "description": "<%= project_name %>",
   "repository": {
     "type": "git",
-    "url": "<%= github.repo_url %>"
+    "url": "git+ssh://git@github.com/fczbkk/<%= slug %>.git"
   },
   "author": {
-    "name": "<%= author.name %>",
-    "email": "<%= author.email %>",
-    "url": "<%= author.url %>"
+    "name": "Riki Fridrich",
+    "email": "riki@fczbkk.com",
+    "url": "http://fczbkk.com/"
   },
-  <% if (license.type !== 'none') { %>
-  "license": "<%= license.type %>",
-  <% } %>
+  "license": "MIT",
   "bugs": {
-    "url": "<%= github.project_url %>/issues"
+    "url": "https://github.com/fczbkk/<%= slug %>/issues"
   },
-  "homepage": "<%= github.project_url %>"
+  "homepage": "https://github.com/fczbkk/<%= slug %>#readme",
+  "scripts": {
+    "build": "node tasks/cleanup.js && webpack",
+    "watch": "webpack --watch & karma start karma.conf.js",
+    "dev": "npm run build && npm run watch",
+    "test": "karma start karma.conf.js --single-run",
+    "release": "npm run build && node tasks/release.js"
+  }
 }

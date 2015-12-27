@@ -1,35 +1,24 @@
 {
   "name": "generator-jslib",
-  "version": "1.0.0",
-  "description": "Yeoman generator",
+  "version": "2.0.0",
+  "description": "Generator for javascript project.",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "fczbkk/generator-jslib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fczbkk/generator-jslib.git"
+  },
   "author": {
     "name": "Riki Fridrich",
     "email": "riki@fczbkk.com",
     "url": "https://github.com/fczbkk"
   },
-  "scripts": {
-    "test": "mocha"
-  },
   "files": [
     "generators"
   ],
-  "keywords": [
-    "yeoman-generator"
-  ],
   "dependencies": {
-    "async": "^1.4.1",
-    "coffee-script": "^1.9.3",
-    "github": "^0.2.4",
-    "inquirer": "^0.9.0",
-    "pascal-case": "^1.1.1",
     "slug": "^0.9.1",
     "string-humanize": "^1.0.0",
-    "yeoman-generator": "^0.20.2"
-  },
-  "devDependencies": {
-    "mocha": "*"
+    "yeoman-generator": "^0.22.2"
   }
 }
