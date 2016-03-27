@@ -1,7 +1,10 @@
+import x from './../src/';
+
+
 describe('<%= project_name %>', function () {
 
-  it('should do something', function () {
-    expect(true).toEqual(false);
+  it('should exist', function () {
+    expect(x).toBeDefined();
   });
 
 });
