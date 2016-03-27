@@ -1,1 +1,7 @@
-module.exports = 'aaa';
+export default class {
+
+  constructor () {
+
+  }
+
+}

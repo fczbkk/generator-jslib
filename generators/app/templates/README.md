@@ -2,14 +2,13 @@
 
 <%= description %>
 
-## Useful commands
+## Documentation
 
-- `npm run dev` - Starts watch task that will build and test project on every chnage in source code.
-- `npm run release` - Bumps project version, tags and pushes project to GIT, publishes the project to NPM.
+TODO
 
 ## Bug reports, feature requests and contact
 
-If you found any bugs, if you have feature requests or any questions, please, either [file an issue at GitHub](https://github.com/fczbkk/<%= slug %>/issues) or send me an e-mail at [riki@fczbkk.com](mailto:riki@fczbkk.com).
+If you found any bugs, if you have feature requests or any questions, please, either [file an issue at GitHub](https://github.com/fczbkk/<%= slug %>/issues) or send me an e-mail at <a href="mailto:riki@fczbkk.com">riki@fczbkk.com</a>.
 
 ## License
 

@@ -48,14 +48,13 @@ module.exports = generators.Base.extend({
 
   createMeta: function () {
     this._copyTemplates({
+      '_babelrc': '.babelrc',
       '_gitignore': '.gitignore',
       '_package.json': 'package.json',
-      '_babelrc': '.babelrc',
-      'karma.conf.js': 'karma.conf.js',
-      'webpack.config.js': 'webpack.config.js',
-      'README.md': 'README.md',
       'CHANGELOG.md': 'CHANGELOG.md',
-      'LICENSE': 'LICENSE'
+      'karma.conf.js': 'karma.conf.js',
+      'LICENSE': 'LICENSE',
+      'README.md': 'README.md'
     });
   },
 
@@ -74,44 +73,25 @@ module.exports = generators.Base.extend({
   },
 
 
-  createTasks: function () {
-    this._copyTemplates({
-      'tasks/build-library.js': 'tasks/build-library.js',
-      'tasks/bump.js': 'tasks/bump.js',
-      'tasks/changelog.js': 'tasks/changelog.js',
-      'tasks/check-files.js': 'tasks/check-files.js',
-      'tasks/cleanup.js': 'tasks/cleanup.js',
-      'tasks/execute-command.js': 'tasks/execute-command.js',
-      'tasks/git.js': 'tasks/git.js',
-      'tasks/publish.js': 'tasks/publish.js',
-      'tasks/release.js': 'tasks/release.js',
-    });
-  },
-
-
   installDependencies: function () {
     var modules_list = [
-      'async',
-      'babel-core',
-      'babel-loader',
-      'babel-plugin-transform-object-assign',
-      'babel-preset-es2015',
-      'colors',
-      'concat-stream',
-      'conventional-changelog',
-      'find-files-by-content',
-      'fs-extra',
-      'glob',
-      'inquirer',
-      'jasmine-core',
-      'karma',
-      'karma-jasmine',
-      'karma-phantomjs-launcher',
-      'phantomjs',
-      'semver',
-      'uglify-js',
-      'webpack'
-    ]
+      "babel-cli",
+      "babel-loader",
+      "babel-plugin-transform-object-assign",
+      "babel-preset-es2015",
+      "conventional-changelog-cli",
+      "documentation",
+      "jasmine-core",
+      "karma",
+      "karma-jasmine",
+      "karma-mocha-reporter",
+      "karma-phantomjs-launcher",
+      "karma-webpack",
+      "mocha",
+      "phantomjs-prebuilt",
+      "rimraf",
+      "webpack"
+    ];
     this.npmInstall(modules_list, {saveDev: true});
   }
 

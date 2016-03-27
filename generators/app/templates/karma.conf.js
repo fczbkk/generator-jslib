@@ -2,16 +2,24 @@ module.exports = function(config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
-    files: [
-      'temp/lib/*.js',
-      'test/*.js'
-    ],
-    reporters: ['progress'],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
+    files: ['test/**/*.spec.js'],
+    preprocessors: {'test/**/*.spec.js': ['webpack']},
+    webpack: webpack_config,
+    webpackMiddleware: {noInfo: true},
+    reporters: ['mocha'],
+    mochaReporter: {output: 'minimal'},
     browsers: ['PhantomJS'],
-    singleRun: false
+    singleRun: true
   });
+};
+
+var webpack_config = {
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: ['babel-loader']
+      }
+    ]
+  }
 };

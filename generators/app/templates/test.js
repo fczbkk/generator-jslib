@@ -1,7 +1,7 @@
-describe('meta', function () {
+describe('<%= project_name %>', function () {
 
-  it('should exist', function () {
-    expect(MyLib).toBeDefined();
+  it('should do something', function () {
+    expect(true).toEqual(false);
   });
 
 });
