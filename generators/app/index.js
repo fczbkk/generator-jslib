@@ -51,6 +51,7 @@ module.exports = generators.Base.extend({
       '_babelrc': '.babelrc',
       '_gitignore': '.gitignore',
       '_package.json': 'package.json',
+      '_travis.yml': '.travis.yml',
       'CHANGELOG.md': 'CHANGELOG.md',
       'karma.conf.js': 'karma.conf.js',
       'LICENSE': 'LICENSE',
