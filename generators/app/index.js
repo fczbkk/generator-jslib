@@ -49,6 +49,7 @@ module.exports = generators.Base.extend({
   createMeta: function () {
     this._copyTemplates({
       '_babelrc': '.babelrc',
+      '_editorconfig': '.editorconfig',
       '_gitignore': '.gitignore',
       '_package.json': 'package.json',
       '_travis.yml': '.travis.yml',
