@@ -1,7 +1,7 @@
 {
   "name": "<%= slug %>",
   "version": "0.0.1",
-  "description": "<%= project_name %>",
+  "description": "<%= description %>",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/fczbkk/<%= slug %>.git"
