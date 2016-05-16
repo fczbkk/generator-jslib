@@ -20,5 +20,13 @@
     "slug": "^0.9.1",
     "string-humanize": "^1.0.0",
     "yeoman-generator": "^0.22.2"
+  },
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "postversion": "git push && git push --tags",
+    "version": "npm run changelog && git add -A"
+  },
+  "devDependencies": {
+    "conventional-changelog-cli": "^1.2.0"
   }
 }
