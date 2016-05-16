@@ -51,6 +51,7 @@ module.exports = generators.Base.extend({
       '_babelrc': '.babelrc',
       '_editorconfig': '.editorconfig',
       '_gitignore': '.gitignore',
+      '_npmignore': '.npmignore',
       '_package.json': 'package.json',
       '_travis.yml': '.travis.yml',
       'CHANGELOG.md': 'CHANGELOG.md',
