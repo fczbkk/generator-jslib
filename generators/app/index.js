@@ -35,6 +35,12 @@ module.exports = generators.Base.extend({
         name: 'description',
         message: 'Describe your JS library in one or two sentences:',
         default: project_name
+      },
+      {
+        name: 'publish_to_npm',
+        message: 'Will you publish this library to NPM?',
+        default: false,
+        type: 'confirm'
       }
     ];
 
