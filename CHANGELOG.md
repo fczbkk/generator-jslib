@@ -1,3 +1,14 @@
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/fczbkk/generator-jslib/compare/v3.1.0...v3.2.0) (2016-05-21)
+
+
+### Features
+
+* add ESLint ([71932c2](https://github.com/fczbkk/generator-jslib/commit/71932c2))
+* make publish to NPM optional ([1657809](https://github.com/fczbkk/generator-jslib/commit/1657809))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/fczbkk/generator-jslib/compare/v2.0.0...v3.1.0) (2016-05-16)
 
