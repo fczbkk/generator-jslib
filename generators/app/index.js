@@ -56,6 +56,7 @@ module.exports = generators.Base.extend({
     this._copyTemplates({
       '_babelrc': '.babelrc',
       '_editorconfig': '.editorconfig',
+      '_eslintrc.root.json': '.eslintrc.json',
       '_gitignore': '.gitignore',
       '_npmignore': '.npmignore',
       '_package.json': 'package.json',
@@ -77,7 +78,8 @@ module.exports = generators.Base.extend({
 
   createTest: function () {
     this._copyTemplates({
-      'test.js': 'test/index.spec.js'
+      'test.js': 'test/index.spec.js',
+      '_eslintrc.test.json': 'test/.eslintrc.json',
     });
   },
 
@@ -90,6 +92,8 @@ module.exports = generators.Base.extend({
       "babel-preset-es2015",
       "conventional-changelog-cli",
       "documentation",
+      "eslint",
+      "eslint-loader",
       "jasmine-core",
       "karma",
       "karma-coverage",
