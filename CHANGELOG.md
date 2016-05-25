@@ -1,3 +1,19 @@
+<a name="3.3.0"></a>
+# [3.3.0](https://github.com/fczbkk/generator-jslib/compare/v3.2.0...v3.3.0) (2016-05-25)
+
+
+### Bug Fixes
+
+* eslint workflow ([7301a02](https://github.com/fczbkk/generator-jslib/commit/7301a02))
+
+
+### Features
+
+* allow custom GitHub account ([2d74f7b](https://github.com/fczbkk/generator-jslib/commit/2d74f7b))
+* set package as private when not publishing to NPM ([04901fa](https://github.com/fczbkk/generator-jslib/commit/04901fa))
+
+
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/fczbkk/generator-jslib/compare/v3.1.0...v3.2.0) (2016-05-21)
 
