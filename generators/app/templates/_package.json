@@ -29,5 +29,6 @@
     "eslint": "eslint ./{src,test}/**/*.js",
     "eslint:build": "npm run eslint -- --max-warnings 0"
   },
+  <% if (!publish_to_npm) { %>"private": true,<% } %>
   "main": "lib/index.js"
 }
