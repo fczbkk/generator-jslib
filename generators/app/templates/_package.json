@@ -18,7 +18,7 @@
   "homepage": "https://github.com/fczbkk/<%= slug %>#readme",
   "scripts": {
     "cleanup": "rimraf temp lib",
-    "prebuild": "npm run test && npm run cleanup && eslint:build",
+    "prebuild": "npm run test && npm run cleanup && npm run eslint:build",
     "build": "babel src -d lib",
     "test": "karma start ./karma.conf.js",
     "dev": "npm run test -- --no-single-run --auto-watch",
@@ -26,7 +26,7 @@
     "postversion": "git push && git push --tags<% if (publish_to_npm) { %> && npm publish<% } %>",
     "version": "npm run build && npm run changelog && git add -A",
     "doc": "documentation readme ./src/index.js -s 'Documentation'",
-    "eslint": "eslint ./[src|test]/**/*.js",
+    "eslint": "eslint ./{src,test}/**/*.js",
     "eslint:build": "npm run eslint -- --max-warnings 0"
   },
   "main": "lib/index.js"
