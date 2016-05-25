@@ -4,7 +4,7 @@
   "description": "<%= description %>",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/fczbkk/<%= slug %>.git"
+    "url": "git+ssh://git@github.com/<%= github_account %>/<%= slug %>.git"
   },
   "author": {
     "name": "Riki Fridrich",
@@ -13,9 +13,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fczbkk/<%= slug %>/issues"
+    "url": "https://github.com/<%= github_account %>/<%= slug %>/issues"
   },
-  "homepage": "https://github.com/fczbkk/<%= slug %>#readme",
+  "homepage": "https://github.com/<%= github_account %>/<%= slug %>#readme",
   "scripts": {
     "cleanup": "rimraf temp lib",
     "prebuild": "npm run test && npm run cleanup && npm run eslint:build",

@@ -41,6 +41,11 @@ module.exports = generators.Base.extend({
         message: 'Will you publish this library to NPM?',
         default: false,
         type: 'confirm'
+      },
+      {
+        name: 'github_account',
+        message: 'GitHub account:',
+        default: 'fczbkk'
       }
     ];
 
