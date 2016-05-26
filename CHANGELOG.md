@@ -1,3 +1,13 @@
+<a name="3.3.1"></a>
+## [3.3.1](https://github.com/fczbkk/generator-jslib/compare/v3.3.0...v3.3.1) (2016-05-26)
+
+
+### Bug Fixes
+
+* add `.babelrc` to `.npmignore` ([a6ee77a](https://github.com/fczbkk/generator-jslib/commit/a6ee77a))
+
+
+
 <a name="3.3.0"></a>
 # [3.3.0](https://github.com/fczbkk/generator-jslib/compare/v3.2.0...v3.3.0) (2016-05-25)
 
