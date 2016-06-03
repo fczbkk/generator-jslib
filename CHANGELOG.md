@@ -1,3 +1,13 @@
+<a name="3.4.1"></a>
+## [3.4.1](https://github.com/fczbkk/generator-jslib/compare/v3.4.0...v3.4.1) (2016-06-03)
+
+
+### Bug Fixes
+
+* generate correct publish command when scoped ([1b6d1da](https://github.com/fczbkk/generator-jslib/commit/1b6d1da))
+
+
+
 <a name="3.4.0"></a>
 # [3.4.0](https://github.com/fczbkk/generator-jslib/compare/v3.3.1...v3.4.0) (2016-06-03)
 
