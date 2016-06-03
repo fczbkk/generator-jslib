@@ -37,20 +37,33 @@ module.exports = generators.Base.extend({
         default: project_name
       },
       {
+        name: 'github_account',
+        message: 'GitHub account:',
+        default: 'fczbkk'
+      },
+      {
         name: 'publish_to_npm',
         message: 'Will you publish this library to NPM?',
         default: false,
         type: 'confirm'
       },
       {
-        name: 'github_account',
-        message: 'GitHub account:',
-        default: 'fczbkk'
+        when: function (response) {return response.publish_to_npm;},
+        name: 'is_scoped_npm',
+        message: 'Should the package be scoped?',
+        default: true,
+        type: 'confirm'
       }
     ];
 
     this.prompt(questions, function (answers) {
       this.custom_data = answers;
+      this.custom_data.package_name = answers.is_scoped_npm
+        ? '@' + answers.github_account + '/' + answers.slug
+        : answers.slug;
+      this.custom_data.publish_command = answers.is_scoped_npm
+        ? 'npm publish'
+        : 'npm publish  --access=public';
       done();
     }.bind(this));
 
