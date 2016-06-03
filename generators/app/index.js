@@ -62,8 +62,8 @@ module.exports = generators.Base.extend({
         ? '@' + answers.github_account + '/' + answers.slug
         : answers.slug;
       this.custom_data.publish_command = answers.is_scoped_npm
-        ? 'npm publish'
-        : 'npm publish  --access=public';
+        ? 'npm publish --access=public'
+        : 'npm publish';
       done();
     }.bind(this));
 
