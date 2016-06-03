@@ -1,3 +1,18 @@
+<a name="3.4.0"></a>
+# [3.4.0](https://github.com/fczbkk/generator-jslib/compare/v3.3.1...v3.4.0) (2016-06-03)
+
+
+### Bug Fixes
+
+* enable `console` during development ([b47f2bb](https://github.com/fczbkk/generator-jslib/commit/b47f2bb))
+
+
+### Features
+
+* add support for scoped packages ([eaa3ef5](https://github.com/fczbkk/generator-jslib/commit/eaa3ef5))
+
+
+
 <a name="3.3.1"></a>
 ## [3.3.1](https://github.com/fczbkk/generator-jslib/compare/v3.3.0...v3.3.1) (2016-05-26)
 
