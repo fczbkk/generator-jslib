@@ -1,3 +1,14 @@
+<a name="3.5.0"></a>
+# [3.5.0](https://github.com/fczbkk/generator-jslib/compare/v3.4.1...v3.5.0) (2016-07-19)
+
+
+### Features
+
+* add "How to use" section in readme ([ac9e117](https://github.com/fczbkk/generator-jslib/commit/ac9e117))
+* add banners ([2afc565](https://github.com/fczbkk/generator-jslib/commit/2afc565))
+
+
+
 <a name="3.4.1"></a>
 ## [3.4.1](https://github.com/fczbkk/generator-jslib/compare/v3.4.0...v3.4.1) (2016-06-03)
 
