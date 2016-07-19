@@ -7,6 +7,20 @@
 [![David](https://img.shields.io/david/fczbkk/element-monitor.svg?maxAge=2592000)](https://david-dm.org/<%= github_account %>/<%= slug %>)
 [![Travis](https://img.shields.io/travis/fczbkk/element-monitor.svg?maxAge=2592000)](https://travis-ci.org/<%= github_account %>/<%= slug %>)
 
+## How to use
+
+Install the library via NPM:
+
+```shell
+npm install <%= package_name %> --save
+```
+
+Then use in your project like this:
+
+```javascript
+// TODO
+```
+
 ## Documentation
 
 TODO
