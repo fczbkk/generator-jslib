@@ -1,6 +1,7 @@
 var generators = require('yeoman-generator');
 var path = require('path');
 var humanize = require('string-humanize');
+var pascalCase = require('pascal-case');
 
 
 module.exports = generators.Base.extend({
@@ -53,11 +54,18 @@ module.exports = generators.Base.extend({
         message: 'Should the package be scoped?',
         default: true,
         type: 'confirm'
+      },
+      {
+        name: 'include_sample',
+        message: 'Include sample page?',
+        default: false,
+        type: 'confirm'
       }
     ];
 
     this.prompt(questions, function (answers) {
       this.custom_data = answers;
+      this.custom_data.object_name = pascalCase(answers.slug);
       this.custom_data.package_name = answers.is_scoped_npm
         ? '@' + answers.github_account + '/' + answers.slug
         : answers.slug;
@@ -89,6 +97,7 @@ module.exports = generators.Base.extend({
 
   createSrc: function () {
     this._copyTemplates({
+      '_eslintrc.src.json': '.eslintrc.json',
       'src.js': 'src/index.js'
     });
   },
@@ -99,6 +108,19 @@ module.exports = generators.Base.extend({
       'test.js': 'test/index.spec.js',
       '_eslintrc.test.json': 'test/.eslintrc.json',
     });
+  },
+
+
+  createSample: function () {
+    if (this.custom_data.include_sample) {
+      this._copyTemplates({
+        '_eslintrc.src.json': '.eslintrc.json',
+        '_webpack.config.js': 'webpack.config.js',
+        'sample.html': 'sample/index.html',
+        'sample.css': 'sample/index.css',
+        'sample.js': 'sample/index.js'
+      });
+    }
   },
 
 
@@ -124,6 +146,11 @@ module.exports = generators.Base.extend({
       "rimraf",
       "webpack"
     ];
+
+    if (this.custom_data.include_sample) {
+      modules_list.push('webpack-dev-server');
+    }
+
     this.npmInstall(modules_list, {saveDev: true});
   }
 

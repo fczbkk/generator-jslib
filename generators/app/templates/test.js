@@ -1,10 +1,10 @@
-import x from './../src/';
+import <%= object_name %> from './../src/';
 
 
 describe('<%= project_name %>', function () {
 
   it('should exist', function () {
-    expect(x).toBeDefined();
+    expect(<%= object_name %>).toBeDefined();
   });
 
 });

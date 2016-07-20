@@ -17,11 +17,15 @@
   },
   "homepage": "https://github.com/<%= github_account %>/<%= slug %>#readme",
   "scripts": {
+    "dev": "npm run test:dev<% if (include_sample) { %> & npm run sample<% } %>",
+    "test:dev": "npm run test -- --no-single-run --auto-watch",
+    "test": "karma start ./karma.conf.js",
+    <% if (include_sample) { %>
+    "sample": "webpack-dev-server --content-base ./sample/ --inline --port 3000",
+    <% } %>
     "cleanup": "rimraf temp lib",
     "prebuild": "npm run test && npm run cleanup && npm run eslint:build",
     "build": "babel src -d lib",
-    "test": "karma start ./karma.conf.js",
-    "dev": "npm run test -- --no-single-run --auto-watch",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "postversion": "git push && git push --tags<% if (publish_to_npm) { %> && <%= publish_command %><% } %>",
     "version": "npm run build && npm run changelog && git add -A",
