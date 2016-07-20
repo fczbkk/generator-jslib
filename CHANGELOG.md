@@ -1,3 +1,13 @@
+<a name="3.6.0"></a>
+# [3.6.0](https://github.com/fczbkk/generator-jslib/compare/v3.5.0...v3.6.0) (2016-07-20)
+
+
+### Features
+
+* add support for sample page ([a54e9c7](https://github.com/fczbkk/generator-jslib/commit/a54e9c7))
+
+
+
 <a name="3.5.0"></a>
 # [3.5.0](https://github.com/fczbkk/generator-jslib/compare/v3.4.1...v3.5.0) (2016-07-19)
 
