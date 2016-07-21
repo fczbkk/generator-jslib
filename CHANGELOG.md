@@ -1,3 +1,19 @@
+<a name="3.7.0"></a>
+# [3.7.0](https://github.com/fczbkk/generator-jslib/compare/v3.6.0...v3.7.0) (2016-07-21)
+
+
+### Bug Fixes
+
+* copy .eslintrc.json files to proper locations ([ada301c](https://github.com/fczbkk/generator-jslib/commit/ada301c))
+* correct URLs of badges in readme ([9e4c0ae](https://github.com/fczbkk/generator-jslib/commit/9e4c0ae))
+
+
+### Features
+
+* add npm prune and install to build workflow ([0cf17b8](https://github.com/fczbkk/generator-jslib/commit/0cf17b8))
+
+
+
 <a name="3.6.0"></a>
 # [3.6.0](https://github.com/fczbkk/generator-jslib/compare/v3.5.0...v3.6.0) (2016-07-20)
 
