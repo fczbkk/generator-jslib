@@ -97,7 +97,7 @@ module.exports = generators.Base.extend({
 
   createSrc: function () {
     this._copyTemplates({
-      '_eslintrc.src.json': '.eslintrc.json',
+      '_eslintrc.src.json': 'src/.eslintrc.json',
       'src.js': 'src/index.js'
     });
   },
@@ -114,7 +114,7 @@ module.exports = generators.Base.extend({
   createSample: function () {
     if (this.custom_data.include_sample) {
       this._copyTemplates({
-        '_eslintrc.src.json': '.eslintrc.json',
+        '_eslintrc.src.json': 'sample/.eslintrc.json',
         '_webpack.config.js': 'webpack.config.js',
         'sample.html': 'sample/index.html',
         'sample.css': 'sample/index.css',
