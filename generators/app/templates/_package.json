@@ -9,11 +9,12 @@
   "author": {
     "name": "Riki Fridrich",
     "email": "riki@fczbkk.com",
-    "url": "http://fczbkk.com/"
+    "url": "https://github.com/fczbkk"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/<%= github_account %>/<%= slug %>/issues"
+    "url": "https://github.com/<%= github_account %>/<%= slug %>/issues",
+    "email": "riki@fczbkk.com"
   },
   "homepage": "https://github.com/<%= github_account %>/<%= slug %>#readme",
   "scripts": {
