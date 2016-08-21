@@ -1,3 +1,21 @@
+<a name="3.7.1"></a>
+## [3.7.1](https://github.com/fczbkk/generator-jslib/compare/v3.7.0...v3.7.1) (2016-08-21)
+
+
+### Bug Fixes
+
+* build documentation on `npm version` ([ae28d3b](https://github.com/fczbkk/generator-jslib/commit/ae28d3b))
+* overcome the bug in Babel that ignores the `ignore` option in RC ([27acddf](https://github.com/fczbkk/generator-jslib/commit/27acddf))
+* prevent circular dependency of npm tasks ([4a4e027](https://github.com/fczbkk/generator-jslib/commit/4a4e027))
+* prevent loop when using `npm version` ([4bd016b](https://github.com/fczbkk/generator-jslib/commit/4bd016b))
+
+
+### Features
+
+* update build workflow, do not include /lib/ in GIT ([6e48bb6](https://github.com/fczbkk/generator-jslib/commit/6e48bb6))
+
+
+
 <a name="3.7.0"></a>
 # [3.7.0](https://github.com/fczbkk/generator-jslib/compare/v3.6.0...v3.7.0) (2016-07-21)
 
