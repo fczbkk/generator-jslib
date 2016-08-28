@@ -6,8 +6,13 @@ module.exports = function (config) {
     preprocessors: {'test/**/*.spec.js': ['webpack']},
     webpack: webpack_config,
     webpackMiddleware: {noInfo: true},
-    reporters: ['coverage', 'mocha'],
-    mochaReporter: {output: 'minimal'},
+    reporters: ['coverage', 'jasmine-diff', 'mocha'],
+    mochaReporter: {
+      output: 'minimal'
+    },
+    jasmineDiffReporter: {
+      pretty: true
+    },
     coverageReporter: {
       type: 'html',
       dir: 'temp/coverage'

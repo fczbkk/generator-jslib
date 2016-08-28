@@ -138,6 +138,7 @@ module.exports = generators.Base.extend({
       "karma",
       "karma-coverage",
       "karma-jasmine",
+      "karma-jasmine-diff-reporter",
       "karma-mocha-reporter",
       "karma-phantomjs-launcher",
       "karma-webpack",
