@@ -1,10 +1,9 @@
 module.exports = {
-  entry: './src/index.js',
+  entry: './sample/index.js',
   output: {
     filename: 'index.js',
-    path: './lib/',
-    library: '<%= object_name %>',
-    libraryTarget: 'umd'
+    path: './sample/',
+    publicPath: '/bundle/'
   },
   module: {
     loaders: [
@@ -13,5 +12,10 @@ module.exports = {
         loaders: ['babel-loader']
       }
     ]
+  },
+  devServer: {
+    contentBase: './sample/',
+    inline: true,
+    port: 3000
   }
 };

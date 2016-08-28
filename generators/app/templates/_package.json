@@ -20,14 +20,16 @@
   "scripts": {
     "dev": "npm run test:dev<% if (include_sample) { %> & npm run sample<% } %>",
     "test:dev": "npm run test -- --no-single-run --auto-watch",
-    "test": "karma start ./karma.conf.js",
+    "test": "cross-env NODE_ENV=es5 karma start ./karma.conf.js",
     <% if (include_sample) { %>
-    "sample": "webpack-dev-server --content-base ./sample/ --inline --port 3000",
+    "sample": "cross-env NODE_ENV=es5 webpack-dev-server --config ./webpack.sample.js",
     <% } %>
-    "cleanup": "rimraf temp lib",
+    "cleanup": "rimraf temp lib module",
     "prebuild": "npm run eslint:build && npm run cleanup && npm run test",
     "build": "npm run compile",
-    "compile": "babel src -d lib",
+    "compile": "npm run compile:es5 && npm run compile:es6",
+    "compile:es5": "cross-env NODE_ENV=es5 webpack --config ./webpack.config.js",
+    "compile:es6": "cross-env NODE_ENV=es6 babel src -d module",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "preversion": "npm run cleanup && npm prune && npm install",
     "postversion": "git push && git push --tags<% if (publish_to_npm) { %> && <%= publish_command %><% } %>",
@@ -38,5 +40,8 @@
     "prepublish": "npm run compile"
   },
   <% if (!publish_to_npm) { %>"private": true,<% } %>
-  "main": "lib/index.js"
+  "main": "lib/index.js",
+  "module": "module/index.js",
+  "webpack": "module/index.js",
+  "jsnext:main": "module/index.js"
 }

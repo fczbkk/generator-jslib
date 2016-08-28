@@ -115,7 +115,7 @@ module.exports = generators.Base.extend({
     if (this.custom_data.include_sample) {
       this._copyTemplates({
         '_eslintrc.src.json': 'sample/.eslintrc.json',
-        '_webpack.config.js': 'webpack.config.js',
+        '_webpack.sample.js': 'webpack.sample.js',
         'sample.html': 'sample/index.html',
         'sample.css': 'sample/index.css',
         'sample.js': 'sample/index.js'
