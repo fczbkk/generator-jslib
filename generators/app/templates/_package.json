@@ -37,7 +37,7 @@
     "doc": "documentation readme ./src/index.js -s 'Documentation'",
     "eslint": "eslint ./{src,test}/**/*.js",
     "eslint:build": "npm run eslint -- --max-warnings 0",
-    "prepublish": "npm run compile"
+    "postinstall": "npm run compile"
   },
   <% if (!publish_to_npm) { %>"private": true,<% } %>
   "main": "lib/index.js",
