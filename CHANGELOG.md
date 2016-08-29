@@ -1,3 +1,20 @@
+<a name="3.7.2"></a>
+## [3.7.2](https://github.com/fczbkk/generator-jslib/compare/v3.7.1...v3.7.2) (2016-08-29)
+
+
+### Bug Fixes
+
+* fix publish workflow ([4d053d2](https://github.com/fczbkk/generator-jslib/commit/4d053d2))
+* use `postinstall` instead of `prepublish` ([105f6ad](https://github.com/fczbkk/generator-jslib/commit/105f6ad))
+
+
+### Features
+
+* add `jasmine-diff` reporter ([838a9be](https://github.com/fczbkk/generator-jslib/commit/838a9be))
+* separate build for ES5 and ES6 ([41c34c4](https://github.com/fczbkk/generator-jslib/commit/41c34c4))
+
+
+
 <a name="3.7.1"></a>
 ## [3.7.1](https://github.com/fczbkk/generator-jslib/compare/v3.7.0...v3.7.1) (2016-08-21)
 
