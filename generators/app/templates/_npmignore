@@ -5,6 +5,6 @@
 /assets/
 .babelrc
 .eslintrc.json
-.travis.yml
+*.yml
 karma.*.js
 webpack.*.js

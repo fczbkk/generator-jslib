@@ -4,3 +4,4 @@
 /module/
 npm-debug.log
 /temp/
+.DS_store
