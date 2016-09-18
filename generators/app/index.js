@@ -131,6 +131,7 @@ module.exports = generators.Base.extend({
       "babel-plugin-transform-object-assign",
       "babel-preset-es2015",
       "conventional-changelog-cli",
+      "cross-env",
       "documentation",
       "eslint",
       "eslint-loader",
