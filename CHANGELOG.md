@@ -1,3 +1,18 @@
+<a name="3.7.3"></a>
+## [3.7.3](https://github.com/fczbkk/generator-jslib/compare/v3.7.2...v3.7.3) (2016-09-18)
+
+
+### Bug Fixes
+
+* add `cross_env` module to dev dependencies ([1f9a8a6](https://github.com/fczbkk/generator-jslib/commit/1f9a8a6))
+
+
+### Features
+
+* allow `console.log` in sample folder ([ae3bdd6](https://github.com/fczbkk/generator-jslib/commit/ae3bdd6))
+
+
+
 <a name="3.7.2"></a>
 ## [3.7.2](https://github.com/fczbkk/generator-jslib/compare/v3.7.1...v3.7.2) (2016-08-29)
 
