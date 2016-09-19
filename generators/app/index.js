@@ -89,6 +89,7 @@ module.exports = generators.Base.extend({
       '_travis.yml': '.travis.yml',
       'CHANGELOG.md': 'CHANGELOG.md',
       'karma.conf.js': 'karma.conf.js',
+      '_webpack.config.js': 'webpack.config.js',
       'LICENSE': 'LICENSE',
       'README.md': 'README.md'
     });
