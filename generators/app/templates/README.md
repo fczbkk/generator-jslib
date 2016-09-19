@@ -18,7 +18,7 @@ npm install <%= package_name %> --save
 Then use in your project like this:
 
 ```javascript
-import <%= object_name %> from '<%= slug %>';
+import <%= object_name %> from '<%= package_name %>';
 
 // TODO
 ```
