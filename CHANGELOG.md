@@ -1,3 +1,8 @@
+<a name="3.7.4"></a>
+## [3.7.4](https://github.com/fczbkk/generator-jslib/compare/v3.7.3...v3.7.4) (2016-09-19)
+
+
+
 <a name="3.7.3"></a>
 ## [3.7.3](https://github.com/fczbkk/generator-jslib/compare/v3.7.2...v3.7.3) (2016-09-18)
 
