@@ -37,7 +37,7 @@ If you found any bugs, if you have feature requests or any questions, please, ei
 - Use `npm run dev` task for local development. It will start a watch task that will run tests against each code change.
 - Don't forget to add/update tests and documentation.
  
- Thank you.
+Thank you.
 
 ## License
 
