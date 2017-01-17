@@ -1,3 +1,15 @@
+<a name="3.7.5"></a>
+## [3.7.5](https://github.com/fczbkk/generator-jslib/compare/v3.7.4...v3.7.5) (2017-01-17)
+
+
+### Bug Fixes
+
+* add `webpack.config.js` when creating files ([52b6c06](https://github.com/fczbkk/generator-jslib/commit/52b6c06))
+* do not ignore build files when not publishing to NPM ([f627eba](https://github.com/fczbkk/generator-jslib/commit/f627eba))
+* remove misleading space from readme ([86a5004](https://github.com/fczbkk/generator-jslib/commit/86a5004))
+
+
+
 <a name="3.7.4"></a>
 ## [3.7.4](https://github.com/fczbkk/generator-jslib/compare/v3.7.3...v3.7.4) (2016-09-19)
 
