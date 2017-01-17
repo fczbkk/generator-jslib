@@ -1,7 +1,9 @@
 /.idea/
 /node_modules/
+<% if (publish_to_npm) { %>
 /lib/
 /module/
+<% } %>
 npm-debug.log
 npm-debug.log.*
 /temp/

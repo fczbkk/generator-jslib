@@ -79,12 +79,11 @@ module.exports = generators.Base.extend({
 
 
   createMeta: function () {
-    this._copyTemplates({
+    var files_list = {
       '_babelrc': '.babelrc',
       '_editorconfig': '.editorconfig',
       '_eslintrc.root.json': '.eslintrc.json',
       '_gitignore': '.gitignore',
-      '_npmignore': '.npmignore',
       '_package.json': 'package.json',
       '_travis.yml': '.travis.yml',
       'CHANGELOG.md': 'CHANGELOG.md',
@@ -92,7 +91,11 @@ module.exports = generators.Base.extend({
       '_webpack.config.js': 'webpack.config.js',
       'LICENSE': 'LICENSE',
       'README.md': 'README.md'
-    });
+    };
+    if (this.custom_data.publish_to_npm) {
+      files_list['_npmignore'] = '.npmignore';
+    }
+    this._copyTemplates(files_list);
   },
 
 
